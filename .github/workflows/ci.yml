@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Create and read file
         run: |
@@ -19,7 +19,7 @@ jobs:
           cat demo.txt
 
       - name: Upload demo.txt
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: demo-file
           path: demo.txt
