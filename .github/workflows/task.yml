@@ -1,1 +1,26 @@
 
+name: Day2-FileHandling
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  file-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create and read file
+        run: |
+          touch demo.txt
+          echo "Hello CI/CD automation!" > demo.txt
+          cat demo.txt
+
+      - name: Upload demo.txt
+        uses: actions/upload-artifact@v4
+        with:
+          name: demo-file
+          path: demo.txt
